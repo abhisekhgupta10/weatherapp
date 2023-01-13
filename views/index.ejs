@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <script
+    src="https://kit.fontawesome.com/fa862b6cef.js"
+    crossorigin="anonymous"
+  ></script>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        body{
+            width:100%;
+            height:100vh;
+            background-image:url('https://images.unsplash.com/photo-1519681393784-d120267933ba?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1124&q=100');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container{
+             padding:1%;
+            width:400px;
+            height:400px;
+            backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    background-color: rgba(255, 246, 246, 0.75);
+    border-radius: 12px;
+    border: 1px solid rgba(215, 221, 231, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+        }
+       form{
+        display: flex;
+        margin-bottom:5%;
+       }
+        
+        input{
+            display:inline-block;
+            width:100%;
+            height:30px;
+            color:black;
+            font-size: 1.4rem;
+            border:none;
+            border-bottom:2px solid rgb(0, 0, 0);
+            background:transparent;
+            outline: none;
+        }
+        button{
+            width:15%;
+            display: inline-block;
+            color: rgb(0, 0, 0);
+            font-size:1.2rem;
+            outline:none;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+        }
+        .city{
+            display:flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom:5%;
+            gap:3%;
+        }
+
+        .city p{
+            font-size:1.2rem;
+            color:tomato;
+            font-weight: bold;
+        }
+        .temp{
+            color:black;
+            font-size:2.8rem;
+            text-align: center;
+            font-weight: bolder;
+            margin-bottom:5%;
+        }
+        .min{
+            display: flex;
+            align-items: center;
+            justify-content:space-between;
+            gap: 2%;
+            margin-bottom:5%;
+        }
+        .min p{
+            font-size:1.2rem;
+            color: tomato;
+        }
+        .hum{
+            font-size:1.2rem;
+            color:tomato;
+            padding:5px 0px;
+            margin-bottom:5%;
+            text-align: center;
+        }
+        .desc{
+            text-align: center;
+            font-size: 1.8rem;
+            color: black;
+            margin-bottom:3%;
+           
+        }
+        img{
+            display: block;
+            margin:0 auto;
+
+        }
+        .author{
+            text-align: center;
+           
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="wrapper">
+            <form action="/" method="post">
+                <input type="search" name="city" placeholder="City">
+               <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </form>
+            <div class="city">
+                <p><%= city %>, </p>
+                <p><%= country %></p>
+            </div>
+            <p class="temp"><%= temp %> &#8451;</p>
+            <div class="min">
+                <p>Min:<%= minTemp %></p>
+                <p>Max:<%= maxTemp %></p>
+            </div>
+            
+            <p class="hum">Humidity:<%= hum %></p>
+            <p class="desc"><%= desc %></p>
+            <img src=" http://openweathermap.org/img/wn/<%= ico %>@2x.png" alt="weather icon">
+            <p class="author">Developed By Abhisekh Gupta</p>
+        </div>
+       
+    </div>
+
+</body>
+</html>
